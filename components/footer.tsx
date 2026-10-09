@@ -42,7 +42,14 @@ export function Footer() {
         <div>
           <Link href="/privacy">Privacy · Draft</Link>
           <Link href="/terms">Terms · Draft</Link>
-          <span>DESIGNED WITH INTENTION ↗</span>
+          <span>
+            DESIGNED WITH INTENTION{" "}
+            <ArrowUpRight
+              className="inline-icon"
+              size={10}
+              aria-hidden="true"
+            />
+          </span>
         </div>
       </div>
     </footer>

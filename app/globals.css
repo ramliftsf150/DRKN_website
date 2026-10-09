@@ -222,8 +222,7 @@ button {
   margin-top: 31px;
 }
 .tiny-lines {
-  font-size: 22px;
-  color: #ffc857;
+  color: #ff6b35;
 }
 .hero-art {
   height: 480px;
@@ -520,9 +519,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 18px 30px;
+  flex-wrap: wrap;
   padding-block: 23px;
-  white-space: nowrap;
 }
 .discipline-strip span {
   font-size: 13px;
@@ -530,11 +529,36 @@ button {
   font-weight: 600;
   color: #c6c0c6;
 }
-.discipline-strip b {
-  font-size: 23px;
-  color: #ee754d;
-  font-weight: 400;
+.discipline-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 42px);
+  white-space: nowrap;
 }
+.discipline-strip .decorative-star {
+  color: #ff6b35;
+}
+.decorative-star {
+  display: inline-block;
+  flex-shrink: 0;
+}
+.inline-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.browser-dots {
+  display: inline-flex;
+  gap: 5px;
+}
+.browser-dots i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
 .section {
   padding-block: 105px;
 }
@@ -1364,9 +1388,8 @@ h3 {
     font-size: 12px;
   }
   .discipline-strip > .wrap {
-    width: max-content;
-    gap: 32px;
-    padding-inline: 20px;
+    justify-content: center;
+    gap: 14px 20px;
   }
   .discipline-strip span {
     font-size: 10px;

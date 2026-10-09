@@ -1,4 +1,14 @@
-import { ArrowDown, Code2, MousePointer2, Sparkles } from "lucide-react";
+import { DecorativeStar } from "./decorative-star";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  ArrowDownRight,
+  ArrowRight,
+  Menu,
+  Code2,
+  MousePointer2,
+  Sparkles,
+} from "lucide-react";
 import { Button, Eyebrow } from "./ui";
 export function Hero() {
   return (
@@ -26,8 +36,8 @@ export function Hero() {
           </Button>
         </div>
         <div className="hero-footnote">
-          <span className="tiny-lines">✦</span> MADE WITH PURPOSE. BUILT FOR
-          WHAT’S NEXT.
+          <DecorativeStar className="tiny-lines" size={22} /> MADE WITH PURPOSE.
+          BUILT FOR WHAT’S NEXT.
         </div>
       </div>
       <div
@@ -49,15 +59,34 @@ export function Hero() {
             <i />
             <i />
             <span>your-next-big-thing.com</span>
-            <span>↗</span>
+            <span>
+              <ArrowUpRight size={10} aria-hidden="true" />
+            </span>
           </div>
           <div className="browser-page">
             <div className="mini-nav">
               <b>
-                next<span>®</span>
+                next
+                <span>
+                  <svg
+                    className="inline-icon"
+                    width="9"
+                    height="9"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <circle cx="6" cy="6" r="5" />
+                    <path d="M4 9V3h2a1.5 1.5 0 0 1 0 3H4m2 0 2 3" />
+                  </svg>
+                </span>
               </b>
               <span>THINK BIG. BUILD BOLD.</span>
-              <span>☰</span>
+              <span>
+                <Menu size={9} aria-hidden="true" />
+              </span>
             </div>
             <div className="mini-hero">
               <small>THIS IS YOUR MOMENT</small>
@@ -66,7 +95,14 @@ export function Hero() {
                 <br />
                 by design<span>.</span>
               </strong>
-              <div className="mini-pill">MAKE YOUR MARK ↗</div>
+              <div className="mini-pill">
+                MAKE YOUR MARK{" "}
+                <ArrowUpRight
+                  className="inline-icon"
+                  size={7}
+                  aria-hidden="true"
+                />
+              </div>
             </div>
             <div className="sculpture">
               <div />
@@ -80,7 +116,9 @@ export function Hero() {
                 <br />
                 EXTRAORDINARY POSSIBILITIES.
               </span>
-              <span>↘</span>
+              <span>
+                <ArrowDownRight size={23} aria-hidden="true" />
+              </span>
             </div>
           </div>
         </div>
@@ -96,7 +134,13 @@ export function Hero() {
           <MousePointer2 size={22} fill="#ff784f" />
           <span>Your next chapter</span>
         </div>
-        <span className="art-caption">IDEA → DESIGN → REALITY</span>
+        <span className="art-caption">
+          IDEA{" "}
+          <ArrowRight className="inline-icon" size={8} aria-hidden="true" />{" "}
+          DESIGN{" "}
+          <ArrowRight className="inline-icon" size={8} aria-hidden="true" />{" "}
+          REALITY
+        </span>
       </div>
       <a href="#services" className="scroll-cue">
         <ArrowDown size={14} /> SCROLL TO EXPLORE

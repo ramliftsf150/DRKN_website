@@ -1,9 +1,11 @@
+import { DecorativeStar } from "@/components/decorative-star";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
   ArrowDown,
+  ArrowUp,
   Check,
   MapPin,
   Sparkles,
@@ -96,13 +98,17 @@ export default async function DesertShine({
         <span className="ds-hero-index">01 / THE FIRST IMPRESSION</span>
       </section>
       <div className="ds-promise-strip">
-        <span>MOBILE BY DESIGN</span>
-        <i>✳</i>
-        <span>DETAILS MATTER</span>
-        <i>✳</i>
-        <span>CARE WITHOUT COMPROMISE</span>
-        <i>✳</i>
-        <span>DESERT SHINE</span>
+        {[
+          "MOBILE BY DESIGN",
+          "DETAILS MATTER",
+          "CARE WITHOUT COMPROMISE",
+          "DESERT SHINE",
+        ].map((label, index) => (
+          <span className="ds-promise-item" key={label}>
+            {label}
+            {index < 3 && <DecorativeStar size={21} />}
+          </span>
+        ))}
       </div>
       <section id="about" className="ds-section ds-wrap ds-about">
         <div className="ds-about-image">
@@ -404,7 +410,10 @@ export default async function DesertShine({
               </span>
             </a>
             <p>Every detail. A little brighter.</p>
-            <a href="#top">Back to top ↑</a>
+            <a href="#top">
+              Back to top{" "}
+              <ArrowUp className="inline-icon" size={12} aria-hidden="true" />
+            </a>
           </div>
           <div className="ds-footer-bottom">
             <span>
@@ -412,7 +421,14 @@ export default async function DesertShine({
               <Link href="/">DRKN Digital Studio</Link>.
             </span>
             <a href="/images/CREDITS.md">Photography credits</a>
-            <Link href="/portfolio">Explore the portfolio ↗</Link>
+            <Link href="/portfolio">
+              Explore the portfolio{" "}
+              <ArrowUpRight
+                className="inline-icon"
+                size={12}
+                aria-hidden="true"
+              />
+            </Link>
           </div>
           <p className="ds-stock-note">
             Licensed stock photography. No affiliation with pictured vehicle

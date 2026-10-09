@@ -1,3 +1,4 @@
+import { DecorativeStar } from "@/components/decorative-star";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -25,15 +26,18 @@ export default function Home() {
       <Hero />
       <div className="discipline-strip">
         <div className="wrap">
-          <span>STRATEGY</span>
-          <b>✳</b>
-          <span>DESIGN</span>
-          <b>✳</b>
-          <span>DEVELOPMENT</span>
-          <b>✳</b>
-          <span>DIGITAL EXPERIENCES</span>
-          <b>✳</b>
-          <span>DRKN.</span>
+          {[
+            "STRATEGY",
+            "DESIGN",
+            "DEVELOPMENT",
+            "DIGITAL EXPERIENCES",
+            "DRKN.",
+          ].map((label, index) => (
+            <span className="discipline-item" key={label}>
+              {label}
+              {index < 4 && <DecorativeStar />}
+            </span>
+          ))}
         </div>
       </div>
       <section id="services" className="section wrap">

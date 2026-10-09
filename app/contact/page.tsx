@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { PageHeading } from "@/components/ui";
 import { ContactForm } from "@/components/contact-form";
 import { brand } from "@/lib/config";
@@ -46,7 +47,14 @@ export default async function Contact({
             <li>You receive a clear project proposal.</li>
           </ol>
           <p>Prefer email?</p>
-          <a href={`mailto:${brand.email}`}>{brand.email} ↗</a>
+          <a href={`mailto:${brand.email}`}>
+            {brand.email}{" "}
+            <ArrowUpRight
+              className="inline-icon"
+              size={14}
+              aria-hidden="true"
+            />
+          </a>
           <p>Prefer a conversation?</p>
           <a href={brand.phoneHref}>{brand.phone}</a>
 

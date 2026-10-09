@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import {
   PageHeading,
   ProjectVisual,
@@ -55,7 +56,10 @@ export default function Portfolio() {
       </section>
       <p className="wrap photo-credit">
         Photography: Pexels.{" "}
-        <a href="/images/CREDITS.md">View image credits and sources ↗</a>
+        <a href="/images/CREDITS.md">
+          View image credits and sources{" "}
+          <ArrowUpRight className="inline-icon" size={12} aria-hidden="true" />
+        </a>
       </p>
       <CTASection />
     </>

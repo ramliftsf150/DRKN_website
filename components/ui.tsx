@@ -145,9 +145,13 @@ export function ProjectVisual({
   return (
     <div className={`photo-browser ${project.type} ${large ? "large" : ""}`}>
       <div className="photo-chrome">
-        <span aria-hidden="true">● ● ●</span>
+        <span className="browser-dots" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+        </span>
         <span>{project.name.toLowerCase()} / concept</span>
-        <span aria-hidden="true">↗</span>
+        <ArrowUpRight size={9} aria-hidden="true" />
       </div>
       <div className="photo-scene">
         <Image
