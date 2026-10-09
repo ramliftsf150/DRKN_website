@@ -11,7 +11,7 @@ export default function About() {
       <PageHeading
         label="THE STUDIO BEHIND THE PIXELS"
         title="Independent spirit. Digital ambition."
-        description="DRKN — pronounced D-R-K-N — is an emerging independent digital studio with a simple belief: a small business deserves a thoughtful website."
+        description="DRKN — pronounced DAR-KIN — is an emerging independent digital studio with a simple belief: a small business deserves a thoughtful website."
       />
       <section className="wrap page-content">
         <div className="about-intro">
