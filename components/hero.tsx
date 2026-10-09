@@ -1,0 +1,109 @@
+import { ArrowDown, Code2, MousePointer2, Sparkles } from "lucide-react";
+import { Button, Eyebrow } from "./ui";
+export function Hero() {
+  return (
+    <section className="hero wrap">
+      <div className="hero-copy">
+        <Eyebrow>INDEPENDENT DIGITAL STUDIO</Eyebrow>
+        <h1>
+          Your Vision.
+          <br />
+          Our Code.
+          <br />
+          <span>
+            Limitless
+            <br className="mobile-break" /> Possibilities.
+          </span>
+        </h1>
+        <p>
+          We build bold, modern websites that help businesses stand out, earn
+          trust, and turn visitors into customers.
+        </p>
+        <div className="hero-actions">
+          <Button href="/pricing">Explore Packages</Button>
+          <Button href="/contact" secondary>
+            Start Your Project
+          </Button>
+        </div>
+        <div className="hero-footnote">
+          <span className="tiny-lines">✦</span> MADE WITH PURPOSE. BUILT FOR
+          WHAT’S NEXT.
+        </div>
+      </div>
+      <div
+        className="hero-art"
+        aria-label="Original abstract web design illustration"
+        role="img"
+      >
+        <div className="orbit orbit-one" />
+        <div className="orbit orbit-two" />
+        <div className="art-glow" />
+        <div className="floating-code">
+          <Code2 size={18} />
+          <span>Good design. Great code.</span>
+          <span className="status-dot" />
+        </div>
+        <div className="hero-browser">
+          <div className="browser-chrome">
+            <i />
+            <i />
+            <i />
+            <span>your-next-big-thing.com</span>
+            <span>↗</span>
+          </div>
+          <div className="browser-page">
+            <div className="mini-nav">
+              <b>
+                next<span>®</span>
+              </b>
+              <span>THINK BIG. BUILD BOLD.</span>
+              <span>☰</span>
+            </div>
+            <div className="mini-hero">
+              <small>THIS IS YOUR MOMENT</small>
+              <strong>
+                Different
+                <br />
+                by design<span>.</span>
+              </strong>
+              <div className="mini-pill">MAKE YOUR MARK ↗</div>
+            </div>
+            <div className="sculpture">
+              <div />
+              <div />
+              <div />
+              <div />
+            </div>
+            <div className="mini-bottom">
+              <span>
+                INDEPENDENT SPIRIT.
+                <br />
+                EXTRAORDINARY POSSIBILITIES.
+              </span>
+              <span>↘</span>
+            </div>
+          </div>
+        </div>
+        <div className="floating-badge">
+          <span>
+            <Sparkles size={20} />
+          </span>
+          <div>
+            Built to stand out.<small>Never to blend in.</small>
+          </div>
+        </div>
+        <div className="design-cursor">
+          <MousePointer2 size={22} fill="#ff784f" />
+          <span>Your next chapter</span>
+        </div>
+        <span className="art-caption">IDEA → DESIGN → REALITY</span>
+      </div>
+      <a href="#services" className="scroll-cue">
+        <ArrowDown size={14} /> SCROLL TO EXPLORE
+      </a>
+      <span className="hero-coordinate">
+        DESIGN + DEVELOPMENT / EST. WITH INTENTION
+      </span>
+    </section>
+  );
+}
