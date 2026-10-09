@@ -4,15 +4,32 @@ import { contactSchema } from "@/lib/contact";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   const origin = request.headers.get("origin");
-  if (
-    origin &&
-    origin !== new URL(request.url).origin &&
-    origin !== process.env.NEXT_PUBLIC_SITE_URL
-  )
-    return NextResponse.json(
-      { error: "This request origin is not allowed." },
-      { status: 403 },
+
+const allowedOrigins = new Set<string>();
+
+// Local development addresses
+if (process.env.NODE_ENV === "development") {
+  allowedOrigins.add("http://localhost:3000");
+  allowedOrigins.add("http://127.0.0.1:3000");
+}
+
+// Configured public website address
+if (process.env.NEXT_PUBLIC_SITE_URL) {
+  try {
+    allowedOrigins.add(
+      new URL(process.env.NEXT_PUBLIC_SITE_URL).origin
     );
+  } catch {
+    console.error("Invalid NEXT_PUBLIC_SITE_URL");
+  }
+}
+
+if (!origin || !allowedOrigins.has(origin)) {
+  return NextResponse.json(
+    { error: "This request origin is not allowed." },
+    { status: 403 }
+  );
+}
   if (!request.headers.get("content-type")?.includes("application/json"))
     return NextResponse.json({ error: "Expected JSON." }, { status: 415 });
   let value: unknown;
